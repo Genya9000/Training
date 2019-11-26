@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Deck {
 
@@ -63,7 +64,7 @@ public class Deck {
     //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
     public Card drawOne() {
         if(arr.length>0){
-            List<Card> list = new ArrayList<>();
+           /* List<Card> list = new ArrayList<>();
             Collections.addAll(list, arr);
 
 
@@ -73,7 +74,9 @@ public class Deck {
             for (int i = 0; i < list.size(); i++) {
                 arr[i] = list.get(i);
 
-            }
+            }*/
+           Card oneCard = arr[arr.length-1];
+           arr = Arrays.stream(arr).limit(arr.length-1).toArray(Card[]::new);
             return oneCard;
 
         }

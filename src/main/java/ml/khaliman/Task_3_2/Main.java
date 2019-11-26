@@ -6,6 +6,7 @@ public class Main {
         System.out.println();
         deck.order();
         System.out.println();
+        System.out.println(deck.hasNext());
         System.out.println(deck.drawOne().toString());
         System.out.println(deck.drawOne().toString());
     }
