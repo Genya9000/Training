@@ -10,8 +10,9 @@ public class TheGame {
 		 */
 		Player player1 = new Player(ActionFigure.NOUGHT);
 		Player player2 = new Player(ActionFigure.CROSS);
-
 		Board board = new Board();
+		/*board.fillBoard();
+		board.print();*/
 
 		/*
 		 * Клас Поле містить метод hasMoreSpace(), що повертатиме true якщо ще залишилося дві
@@ -51,8 +52,8 @@ public class TheGame {
 
 			/*
 			 * Такі самі дії потрібно виконати для другого гравця
-			 */
-			/*
+			 *//*
+			 *//*
 			 * В якості додаткового завдання пропоную уважно переглянути тіло
 			 * циклу та винести код, що повторюється в окремий метод
 			 */
