@@ -1,26 +1,35 @@
 package ml.khaliman.codeWars;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        //getMiddle("Ponya");
-        //System.out.println(getMiddle("Ponya").toString());
         System.out.println(getMiddle("longer"));
-        String a = "Kolya";
 
-        System.out.println(a.toCharArray());
     }
     public static String getMiddle(String word) {
-        char[] result = word.toCharArray();
+
                 boolean isEven = word.length()%2!=1;
+        Object[] ints = word.chars().mapToObj(i -> (char)i).toArray();
+        String subString;
+
+
         if(isEven){
-            result= Arrays.stream(result).skip(word.length()/2 -1).limit(2).toArray();
+            /*result= stream.skip(word.length()/2 -1).limit(2).toArray();*/
+            subString = Arrays.stream(ints,word.length()/2 -1,word.length()/2+1).
+                    map(i -> (char)i).
+                    map(String::valueOf).
+                    collect(Collectors.joining());
         }
         else {
-            result= Arrays.stream(result).skip(word.length()/2).limit(1).toArray();
+             subString = Arrays.stream(ints,word.length()/2 -1,word.length()/2).
+                    map(i -> (char)i).
+                    map(String::valueOf).
+                    collect(Collectors.joining());
         }
 
-        return Arrays.toString(result);
+        return subString;
     }
 }
