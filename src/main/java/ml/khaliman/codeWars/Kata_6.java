@@ -1,7 +1,7 @@
 package ml.khaliman.codeWars;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
-import java.util.stream.IntStream;
 
 public class Kata_6 {
     static int[] newA;
@@ -23,16 +23,26 @@ public class Kata_6 {
     }
 
     public static String getMiddle(String word) {
-        String result = "";
-        IntStream stream = word.chars();
-        int count = (int) stream.count();
-        if(count%2!=1){
-            result= stream.skip(count/2 -1).limit(2).toString();
+
+        boolean isEven = word.length()%2!=1;
+        Object[] ints = word.chars().mapToObj(i -> (char)i).toArray();
+        String subString;
+
+
+        if(isEven){
+            /*result= stream.skip(word.length()/2 -1).limit(2).toArray();*/
+            subString = Arrays.stream(ints,word.length()/2 -1,word.length()/2+1).
+                    map(i -> (char)i).
+                    map(String::valueOf).
+                    collect(Collectors.joining());
         }
         else {
-            result= stream.skip(count/2).limit(1).toString();
+            subString = Arrays.stream(ints,word.length()/2 -1,word.length()/2).
+                    map(i -> (char)i).
+                    map(String::valueOf).
+                    collect(Collectors.joining());
         }
 
-        return result;
+        return subString;
     }
 }
