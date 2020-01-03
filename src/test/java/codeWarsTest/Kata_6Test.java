@@ -6,6 +6,7 @@ import static ml.khaliman.codeWars.Kata_6.comp;
 import static org.junit.Assert.*;
 
 public class Kata_6Test {
+    private BraceChecker checker = new BraceChecker();
     @Test
     public void test_1() {
         int[] a = new int[]{121, 144, 19, 161, 19, 144, 19, 11};
@@ -143,6 +144,10 @@ public class Kata_6Test {
         assertEquals("Jacob and Alex like this", Solution.whoLikesIt("Jacob", "Alex"));
         assertEquals("Max, John and Mark like this", Solution.whoLikesIt("Max", "John", "Mark"));
         assertEquals("Alex, Jacob and 2 others like this", Solution.whoLikesIt("Alex", "Jacob", "Mark", "Max"));
+    }
+    @Test
+    public void testInvalid() {
+        assertEquals(false, checker.isValid("[(])"));
     }
 }
 
