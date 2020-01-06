@@ -177,5 +177,33 @@ public class Kata_6Test {
         int received = numbers[actual[0]] + numbers[actual[1]];
         assertEquals(target, received);
     }
+    @Test
+    public void test11() {
+        String[] names = new String[] { "Sheldon", "Leonard", "Penny", "Rajesh", "Howard" };
+        int n = 1;
+        assertEquals("Sheldon", new Line().WhoIsNext(names, n));
+    }
+    @Test
+    public void test21() {
+        String[] names = new String[] { "Sheldon", "Leonard", "Penny", "Rajesh", "Howard" };
+        int n = 6;
+        assertEquals("Sheldon", new Line().WhoIsNext(names, n));
+    }
+    private static void testing(String actual, String expected) {
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void test2121() {
+        System.out.println("longestConsec Fixed Tests");
+        testing(LongestConsec.longestConsec(new String[] {"zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"}, 2), "abigailtheta");
+        testing(LongestConsec.longestConsec(new String[] {"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"}, 1), "oocccffuucccjjjkkkjyyyeehh");
+        testing(LongestConsec.longestConsec(new String[] {}, 3), "");
+        testing(LongestConsec.longestConsec(new String[] {"itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvrzlaodfixoyxvyuyvgpck"}, 2), "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck");
+        //testing(LongestConsec.longestConsec(new String[] {"wlwsasphmxx","owiaxujylentrklctozmymu","wpgozvxxiu"}, 2), "wlwsasphmxxowiaxujylentrklctozmymu");
+        testing(LongestConsec.longestConsec(new String[] {"zone", "abigail", "theta", "form", "libe", "zas"}, -2), "");
+        testing(LongestConsec.longestConsec(new String[] {"it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"}, 3), "ixoyx3452zzzzzzzzzzzz");
+        testing(LongestConsec.longestConsec(new String[] {"it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"}, 15), "");
+        testing(LongestConsec.longestConsec(new String[] {"it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"}, 0), "");
+    }
 }
 

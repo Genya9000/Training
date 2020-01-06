@@ -1,8 +1,5 @@
 package ml.khaliman.codeWars;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -10,7 +7,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(40300%1000);
+     /*   System.out.println(40300%1000);
         Main.expandedForm(545);
 
     }
@@ -34,6 +31,10 @@ public class Main {
             result += Integer.toString((Integer) res[i])+" + ";
         }
 
-        return result.substring(0, result.length()-3);
-    }
+        return result.substring(0, result.length()-3);*/
+        /*System.out.println(7230702951L%5);
+*/
+        String[] res = new String[]{"sdsd", "ds", "s", "fdgdfg"};
+        System.out.println(Arrays.stream(res).max((x1, x2) -> Integer.compare(x1.length(), x2.length())).get());
+        }
 }
