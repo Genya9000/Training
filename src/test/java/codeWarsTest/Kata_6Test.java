@@ -205,5 +205,17 @@ public class Kata_6Test {
         testing(LongestConsec.longestConsec(new String[] {"it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"}, 15), "");
         testing(LongestConsec.longestConsec(new String[] {"it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"}, 0), "");
     }
+    @Test
+    public void testSomeUnderscoreLowerStart() {
+        String input = "the_Stealth_Warrior";
+        System.out.println("input: "+input);
+        assertEquals("theStealthWarrior", Solution.toCamelCase(input));
+    }
+    @Test
+    public void testSomeDashLowerStart() {
+        String input = "the-Stealth-Warrior";
+        System.out.println("input: "+input);
+        assertEquals("theStealthWarrior", Solution.toCamelCase(input));
+    }
 }
 
