@@ -34,7 +34,9 @@ public class Main {
         return result.substring(0, result.length()-3);*/
         /*System.out.println(7230702951L%5);
 */
-        String[] res = new String[]{"sdsd", "ds", "s", "fdgdfg"};
-        System.out.println(Arrays.stream(res).max((x1, x2) -> Integer.compare(x1.length(), x2.length())).get());
-        }
+String str = "Most";
+        System.out.println(str.substring(0, 1));
+    }
+
+
 }
