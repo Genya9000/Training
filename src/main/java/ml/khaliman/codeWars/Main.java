@@ -5,6 +5,27 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
+    char[] smallLetters = new char[26];
+    char[] bigLetters = new char[26];
+    public  char[] findMissingLetter(char[] array)
+    {
+
+
+        for(char i = 'a';i<='z';i++)
+        {
+            int j = 0;
+            smallLetters[j] = i;
+            j++;
+        }
+        for(char i = 'A';i<='Z';i++)
+        {
+            int j = 0;
+            bigLetters[j] = i;
+            j++;
+        }
+
+        return bigLetters;
+    }
     public static void main(String[] args) {
 
      /*   System.out.println(40300%1000);
@@ -34,9 +55,10 @@ public class Main {
         return result.substring(0, result.length()-3);*/
         /*System.out.println(7230702951L%5);
 */
-String str = "Most";
-        System.out.println(str.substring(0, 1));
-    }
+        Main main = new Main();
+
+        System.out.println(main.bigLetters[2]);
 
 
+        }
 }
