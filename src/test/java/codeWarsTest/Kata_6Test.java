@@ -210,5 +210,10 @@ public class Kata_6Test {
         assertEquals('e', Kata.findMissingLetter(new char[] { 'a','b','c','d','f' }));
         assertEquals('P', Kata.findMissingLetter(new char[] { 'O','Q','R','S' }));
     }
+    @Test
+    public void FixedTests1() {
+        assertEquals("igPay atinlay siay oolcay", PigLatin.pigIt("Pig latin is cool"));
+        assertEquals("hisTay siay ymay tringsay", PigLatin.pigIt("This is my string"));
+    }
 }
 
