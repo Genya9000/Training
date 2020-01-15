@@ -2,7 +2,12 @@ package codeWarsTest;
 import ml.khaliman.codeWars.*;
 import org.junit.Test;
 import static java.lang.Math.log;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Collectors;
+
 
 import static ml.khaliman.codeWars.Kata_6.comp;
 import static org.junit.Assert.*;
@@ -294,5 +299,28 @@ public class Kata_6Test {
         }
         return p;
     }
+    @Test
+    public void BasicTests()
+    {
+        assertEquals("1", Kata.Factorial(1));
+        assertEquals("120", Kata.Factorial(5));
+        assertEquals("362880", Kata.Factorial(9));
+        assertEquals("1307674368000", Kata.Factorial(15));
+    }
+    @Test public void example1() {
+        assertEquals( new ArrayList<String>(Arrays.asList("a")),
+                Permutations.singlePermutations("a").stream().sorted().collect(Collectors.toList()) );
+    }
+
+    @Test public void example2() {
+        assertEquals( new ArrayList<String>(Arrays.asList("ab","ba")),
+                Permutations.singlePermutations("ab").stream().sorted().collect(Collectors.toList()) );
+    }
+
+    @Test public void example3() {
+        assertEquals( new ArrayList<String>(Arrays.asList("aabb", "abab", "abba", "baab", "baba", "bbaa")),
+                Permutations.singlePermutations("aabb").stream().sorted().collect(Collectors.toList()) );
+    }
+
 }
 
