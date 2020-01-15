@@ -1,5 +1,6 @@
 package ml.khaliman.codeWars;
 import java.io.BufferedReader;
+import java.math.BigInteger;
 import java.util.*;
 
 public class Kata {
@@ -46,5 +47,13 @@ public class Kata {
             expectableLetter++;
         }
         return expectableLetter;
+    }
+    public static String Factorial(int n) {
+
+        BigInteger result = BigInteger.valueOf(1);
+        for (  int i = 1; i <=n; i ++){
+            result = result.multiply(BigInteger.valueOf(i));
+        }
+        return String.valueOf( result);
     }
 }
