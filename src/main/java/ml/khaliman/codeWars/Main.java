@@ -55,10 +55,20 @@ public class Main {
         return result.substring(0, result.length()-3);*/
         /*System.out.println(7230702951L%5);
 */
-        Main main = new Main();
+        /*Main main = new Main();
 
-        System.out.println(main.bigLetters[2]);
-
+        System.out.println(main.bigLetters[2]);*/
+        /*int [] arr = new int[]{1, 2, 3, 4};
+        int [] rez = new int[arr.length];
+        for (int i = 0; i <arr.length ; i++) {
+            rez[i] = arr[arr.length-1-i];
+        }
+        System.out.println(Arrays.toString(rez));*/
+        int factorial = 1;
+        for (int i = 3; i >=1 ; i--) {
+            factorial*= i;
+        }
+        System.out.println(factorial);
 
         }
 }

@@ -31,4 +31,22 @@ public class Solution {
         }
         return null;
     }
+    public static int zeros(int n) {
+        int rez = 0;
+        /*int factorial = 1;
+        for (int i = 3; i >=1 ; i--) {
+            factorial*= i;
+        }*/
+        while(n > 0)
+
+        {
+
+            n /= 5;
+
+            rez += n;
+
+        }
+
+        return rez;
+    }
 }
