@@ -12,7 +12,8 @@ import static java.util.stream.Collectors.joining;
 
 import static ml.khaliman.codeWars.Kata_6.comp;
 import static org.junit.Assert.*;
-
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.assertThat;
 public class Kata_6Test {
     private BraceChecker checker = new BraceChecker();
     @Test
@@ -341,7 +342,12 @@ public class Kata_6Test {
         System.out.println(text);
         Assert.assertArrayEquals( result, Snail.snail(array));
     }
-
+    @Test
+    public void testZeros() throws Exception {
+        assertThat(Solution.zeros(0), is(0));
+        assertThat(Solution.zeros(6), is(1));
+        assertThat(Solution.zeros(14), is(2));
+    }
 
 }
 
