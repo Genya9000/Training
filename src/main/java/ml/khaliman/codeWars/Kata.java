@@ -56,4 +56,13 @@ public class Kata {
         }
         return String.valueOf( result);
     }
+    public static String longToIP(long ip) {
+
+       StringBuilder rezult = new StringBuilder();
+        for (int i = 1; i <5 ; i++) {
+            rezult = rezult.append((ip>>(32-(8*i)))&0xff).append(".");
+        }
+        rezult.deleteCharAt(rezult.length()-1);
+        return rezult.toString(); // do it!
+    }
 }
