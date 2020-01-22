@@ -348,6 +348,11 @@ public class Kata_6Test {
         assertThat(Solution.zeros(6), is(1));
         assertThat(Solution.zeros(14), is(2));
     }
-
+    @Test
+    public void sampleTest() {
+        assertEquals("128.114.17.104", Kata.longToIP(2154959208L));
+        assertEquals("0.0.0.0", Kata.longToIP(0));
+        assertEquals("128.32.10.1", Kata.longToIP(2149583361L));
+    }
 }
 
