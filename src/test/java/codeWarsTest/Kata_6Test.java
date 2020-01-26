@@ -1,19 +1,19 @@
 package codeWarsTest;
+
 import ml.khaliman.codeWars.*;
 import org.junit.Assert;
 import org.junit.Test;
-import static java.lang.Math.log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.Collectors;
-import static java.util.stream.Collectors.joining;
 
+import static java.lang.Math.log;
+import static java.util.stream.Collectors.joining;
 import static ml.khaliman.codeWars.Kata_6.comp;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
 public class Kata_6Test {
     private BraceChecker checker = new BraceChecker();
     @Test
@@ -348,11 +348,21 @@ public class Kata_6Test {
         assertThat(Solution.zeros(6), is(1));
         assertThat(Solution.zeros(14), is(2));
     }
+
     @Test
     public void sampleTest() {
         assertEquals("128.114.17.104", Kata.longToIP(2154959208L));
         assertEquals("0.0.0.0", Kata.longToIP(0));
         assertEquals("128.32.10.1", Kata.longToIP(2149583361L));
+    }
+
+    @Test
+    public void basicTests1() {
+        assertEquals(21, Kata.nextBiggerNumber(12));
+        assertEquals(531, Kata.nextBiggerNumber(513));
+        assertEquals(2071, Kata.nextBiggerNumber(2017));
+        assertEquals(441, Kata.nextBiggerNumber(414));
+        assertEquals(414, Kata.nextBiggerNumber(144));
     }
 }
 

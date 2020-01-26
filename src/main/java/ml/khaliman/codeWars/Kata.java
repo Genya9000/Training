@@ -1,7 +1,10 @@
 package ml.khaliman.codeWars;
-import java.io.BufferedReader;
+
 import java.math.BigInteger;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Kata {
     public static int findShort(String s) {
@@ -56,13 +59,37 @@ public class Kata {
         }
         return String.valueOf( result);
     }
+
     public static String longToIP(long ip) {
 
-       StringBuilder rezult = new StringBuilder();
-        for (int i = 1; i <5 ; i++) {
-            rezult = rezult.append((ip>>(32-(8*i)))&0xff).append(".");
+        StringBuilder rezult = new StringBuilder();
+        for (int i = 1; i < 5; i++) {
+            rezult = rezult.append((ip >> (32 - (8 * i))) & 0xff).append(".");
         }
-        rezult.deleteCharAt(rezult.length()-1);
+        rezult.deleteCharAt(rezult.length() - 1);
         return rezult.toString(); // do it!
+    }
+
+    public static long nextBiggerNumber(long n) {
+        int result = -1;
+        ArrayList<Long> array = new ArrayList<>();
+        do {
+            array.add(n % 10);
+            n /= 10;
+        } while (n > 0);
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) > array.get(i + 1)) {
+                long test = array.get(i);
+                array.set(i, array.get(i + 1));
+                array.set(i + 1, test);
+                Collections.reverse(array);
+                for (long a : array
+                ) {
+
+                }
+                break;
+            }
+        }
+        return result;
     }
 }

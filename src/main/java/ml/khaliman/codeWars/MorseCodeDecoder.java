@@ -1,3 +1,4 @@
+/*
 package ml.khaliman.codeWars;
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -27,4 +28,4 @@ public class MorseCodeDecoder {
                         .collect(Collectors.joining()))
                 .collect(Collectors.joining(" "));
     }
-}
+}*/
