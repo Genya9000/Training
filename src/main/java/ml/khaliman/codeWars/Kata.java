@@ -82,7 +82,11 @@ public class Kata {
                 long test = array.get(i);
                 array.set(i, array.get(i + 1));
                 array.set(i + 1, test);
+                Collections.reverse(array);
+                for (long a : array
+                ) {
 
+                }
                 break;
             }
         }
