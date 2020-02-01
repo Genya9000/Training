@@ -70,8 +70,8 @@ public class Kata {
         return rezult.toString(); // do it!
     }
 
-    public static long nextBiggerNumber(long n) {
-        int result = -1;
+    public static long nextBiggerNumber(long n) /*{
+        long result = -1;
         ArrayList<Long> array = new ArrayList<>();
         do {
             array.add(n % 10);
@@ -83,13 +83,28 @@ public class Kata {
                 array.set(i, array.get(i + 1));
                 array.set(i + 1, test);
                 Collections.reverse(array);
-                for (long a : array
-                ) {
-
+                result = 0;
+                for (int j = 0; j < array.size(); j++) {
+                    result += array.get(j)*Math.pow(10, (array.size()-1-j));
                 }
                 break;
             }
         }
         return result;
+    }*/
+    {
+        char [] s = String.valueOf(n).toCharArray();
+        for(int i = s.length - 2; i >= 0; i--){
+            for (int j = s.length-1; j > i; j--){
+                if(s[i] < s[j]){
+                    char tmp = s[i];
+                    s[i] = s[j];
+                    s[j] = tmp;
+                    Arrays.sort(s, i+1, s.length);
+                    return Long.valueOf(String.valueOf(s));
+                }
+            }
+        }
+        return -1;
     }
 }
