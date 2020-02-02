@@ -4,9 +4,7 @@ import ml.khaliman.codeWars.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.lang.Math.log;
@@ -363,6 +361,40 @@ public class Kata_6Test {
         assertEquals(2071, Kata.nextBiggerNumber(2017));
         assertEquals(441, Kata.nextBiggerNumber(414));
         assertEquals(414, Kata.nextBiggerNumber(144));
+    }
+
+    @Test
+    public void testExample2() {
+        List<String> warriorsList = new ArrayList<String>();
+        //test for n = 0
+        warriorsList = BalancedParens.balancedParens(0);
+        assertEquals(new ArrayList<String>(Arrays.asList(new String[]{""}))
+                , warriorsList
+        );
+        //test for n = 1
+        warriorsList = BalancedParens.balancedParens(1);
+        assertEquals(new ArrayList<String>(Arrays.asList(new String[]{"()"}))
+                , warriorsList
+        );
+        //test for n =2
+        warriorsList = BalancedParens.balancedParens(2);
+        Collections.sort(warriorsList);
+        assertEquals(new ArrayList<String>(Arrays.asList(new String[]{"(())", "()()"}))
+                , warriorsList
+        );
+        //test for n = 3
+        warriorsList = BalancedParens.balancedParens(3);
+        Collections.sort(warriorsList);
+        assertEquals(new ArrayList<String>(Arrays.asList(new String[]{"((()))", "(()())", "(())()", "()(())", "()()()"}))
+                , warriorsList
+        );
+        //test for n = 4
+        warriorsList = BalancedParens.balancedParens(4);
+        Collections.sort(warriorsList);
+        assertEquals(new ArrayList<String>(Arrays.asList(new String[]{"(((())))", "((()()))", "((())())", "((()))()", "(()(()))", "(()()())", "(()())()", "(())(())", "(())()()", "()((()))", "()(()())", "()(())()", "()()(())", "()()()()"}))
+                , warriorsList
+        );
+
     }
 }
 
